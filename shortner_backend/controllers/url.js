@@ -2,9 +2,9 @@ import { nanoid } from "nanoid";
 import URL from "../models/url.js";
 import mongoose from "mongoose";
 
-export const handleGenerateNewShortURL = async (req, res) => {
+export const handleNewShortURL = async (req, res) => {
   const body = req.body;
-  console.log(body);
+  // console.log(body);
   if (!body.url || !body.notes) {
     return res
       .status(400)

@@ -1,10 +1,10 @@
 import express from 'express'
-import  {handleGenerateNewShortURL,getShortId,getAllUrls,deleteUrl,handleSearch} from '../controllers/url.js';
+import  {handleNewShortURL,getShortId,getAllUrls,deleteUrl,handleSearch} from '../controllers/url.js';
 
 
 const router = express.Router();
 
-router.post("/",handleGenerateNewShortURL);
+router.post("/",handleNewShortURL);
 router.get('/getAllUrls', getAllUrls)
 router.get("/search",handleSearch )
 router.get('/:shortId',getShortId)

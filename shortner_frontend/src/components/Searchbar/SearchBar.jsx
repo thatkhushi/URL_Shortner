@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { TextField } from "@mui/material";
 import "./SearchBar.css";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { fetchAllFilteredUrls } from "../../actions/url";
 
 
@@ -9,9 +9,11 @@ const SearchBar = () => {
   const [inputText, setInputText] = useState("");
     const dispatch = useDispatch();
 
+    const filteredData = useSelector((state) => state.getFilteredUrlReducer);
+
   useEffect(()=>{
     dispatch(fetchAllFilteredUrls(inputText));
-  },[inputText]);
+  },[inputText,filteredData]);
 
 
   return (

@@ -1,0 +1,55 @@
+.dataCardWrapper{
+    display: flex;
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    margin: 2rem;
+    border-radius: 1rem;
+    flex-wrap: wrap;
+}
+.dataCardText{
+    font-size: 20px;
+}
+.textWithUrl{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.countStats{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    flex: 0.3;
+}
+.statistics{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0.5;
+}
+.copy_img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.data_stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.imageDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 0.6;
+}

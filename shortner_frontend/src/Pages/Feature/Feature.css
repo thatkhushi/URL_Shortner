@@ -1,0 +1,69 @@
+.feature__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    padding-top: 1rem;
+   margin-top: 2rem;
+   flex-direction: column;
+   
+}
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85vw;
+    height: 100%;
+    /* flex: 1 1; */
+    padding: 1rem 1rem;
+    border: 2px solid black;
+    border-radius: 2rem;
+    background-color: #486075;
+   
+}
+.url_input{
+    width: 65vw;
+    min-width: 200px;
+    height: 60px;
+    margin-right: 2rem;
+    font-size: 20px;
+    padding-top: 1rem;
+    
+}
+.shorten_button{
+    background-color: #00a7ca;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0.9rem 3rem;
+    border-radius: 10px;
+    border: 0px;
+    font-family: cursive;
+    /* margin-top: 2rem; */
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
+}
+.url_input_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.text3{
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #486075;
+    font-family: cursive;
+    line-height: 45px;
+    margin-bottom: 1rem;
+}
+.textInputArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

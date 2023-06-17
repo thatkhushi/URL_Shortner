@@ -1,0 +1,23 @@
+{
+  "name": "shortner_backend",
+  "version": "1.0.0",
+  "description": "backend for URL shortner",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Khushi",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.3.0",
+    "nanoid": "^4.0.2",
+    "shortid": "^2.2.16"
+  }
+}

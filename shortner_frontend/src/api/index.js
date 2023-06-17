@@ -13,5 +13,5 @@ export const logIn = (authData) => API.post('/user/login', authData);
 export const signUp = (authData) => API.post('/user/signup', authData);
 export const sendUrl = (urlData) => API.post('/url', urlData);
 export const getAllUrls = () => API.get('/url/getAllUrls');
-export const getFilteredUrls = (queryData) => API.get(`/url/search?notes=${queryData}`);
+export const getFilteredUrls = (queryData) => API.get(`/url/search?data=${queryData}`);
 export const deleteUrl = (id) => API.delete(`/url/delete/${id}`) 

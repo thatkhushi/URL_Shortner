@@ -6,7 +6,9 @@ export const handleGenerateNewShortURL = async (req, res) => {
   const body = req.body;
   console.log(body);
   if (!body.url || !body.notes) {
-    return res.status(400).json({ message: "URL and notes are required fields 🥲" });
+    return res
+      .status(400)
+      .json({ message: "URL and notes are required fields 🥲" });
   }
   const shortId = nanoid(8);
   await URL.create({
@@ -14,13 +16,10 @@ export const handleGenerateNewShortURL = async (req, res) => {
     redirectURL: body.url,
     notes: body.notes,
     visitHistory: [],
-    clicks:0,
-   
+    clicks: 0,
   });
   return res.json({ id: shortId });
 };
-
-
 
 export const getShortId = async (req, res) => {
   const shortId = req.params.shortId;
@@ -34,10 +33,9 @@ export const getShortId = async (req, res) => {
           timeStamp: Date.now(),
         },
       },
-      $inc:{
-        clicks:1
-        
-      }
+      $inc: {
+        clicks: 1,
+      },
     }
   );
   res.redirect(entry?.redirectURL);
@@ -77,24 +75,40 @@ export const deleteUrl = async (req, res) => {
 };
 
 export const handleSearch = async (req, res) => {
-  const { notes } = req.query;
+  const { data } = req.query;
+
   try {
-    if(notes != ""){
+    if (data != "") {
       const result = await URL.aggregate([
         {
           $search: {
             index: "autocomplete_notes",
-            autocomplete: {
-              query: notes,
-              path: "notes",
-              fuzzy: {
-                maxEdits: 2,
-              },
+            compound: {
+              should: [
+                {
+                  autocomplete: {
+                    query: data,
+                    path: "notes",
+                    fuzzy: {
+                      maxEdits: 1,
+                    },
+                  },
+                },
+                {
+                  autocomplete: {
+                    query: data,
+                    path: "redirectURL",
+                    fuzzy: {
+                      maxEdits: 2,
+                    },
+                  },
+                },
+              ],
             },
           },
         },
         {
-          $limit: 2,
+          $limit: 5,
         },
         {
           $project: {
@@ -102,17 +116,14 @@ export const handleSearch = async (req, res) => {
             shortId: 1,
             redirectURL: 1,
             visitHistory: 1,
-            clicks:1,
-           
+            clicks: 1,
           },
         },
       ]);
       return res.status(200).send(result);
-    }
-    else{
+    } else {
       return res.json([]);
     }
-    
   } catch (error) {
     // console.log(error);
     return res.json([]);

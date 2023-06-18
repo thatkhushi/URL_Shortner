@@ -22,10 +22,10 @@ Above command can be used on the shortner_frontend side to install dependencies
 Above command can be used on the shortner_backend side to install dependencies
 
 # `npm start`
-Above command can be used on the shortner_frontend side to run shortner_frontend
+Above command can be used on the shortner_frontend side to run client side
 
 # `npm start`
-Above command can be used on the shortner_backend side to run shortner_backend
+Above command can be used on the shortner_backend side to run server side
 
 
 # Internal working of the project

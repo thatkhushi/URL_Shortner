@@ -48,7 +48,7 @@ const DataCard = ({ url }) => {
                 target="blank"
                 style={{ textDecoration: "none" }}
               >
-                {url?.shortId}
+                http://www.shorty.com/{url?.shortId}
               </Link>
             </p>
           </div>

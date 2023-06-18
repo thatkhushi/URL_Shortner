@@ -103,6 +103,15 @@ export const handleSearch = async (req, res) => {
                     },
                   },
                 },
+                {
+                  autocomplete: {
+                    query: data,
+                    path: "shortId",
+                    fuzzy: {
+                      maxEdits: 1,
+                    },
+                  },
+                },
               ],
             },
           },
